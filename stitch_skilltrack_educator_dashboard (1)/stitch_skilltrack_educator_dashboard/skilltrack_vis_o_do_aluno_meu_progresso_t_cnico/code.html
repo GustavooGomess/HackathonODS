@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillTrack - Hub de Aprendizado e Hard Skills</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#0053db",
+            "primary-fixed-dim": "#b4c5ff",
+            "background": "#f8f9ff",
+            "on-secondary-container": "#5c647a",
+            "surface-variant": "#d3e4fe",
+            "primary-container": "#2563eb",
+            "on-tertiary-fixed": "#002114",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-dim": "#cbdbf5",
+            "on-primary-container": "#eeefff",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-tertiary-container": "#bdffdc",
+            "on-secondary-fixed": "#131b2e",
+            "primary-fixed": "#dbe1ff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#003ea8",
+            "inverse-surface": "#213145",
+            "surface-container-high": "#dce9ff",
+            "secondary-fixed": "#dae2fd",
+            "surface-container-low": "#eff4ff",
+            "tertiary-fixed": "#85f8c4",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#0b1c30",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "secondary": "#565e74",
+            "on-primary-fixed": "#00174b",
+            "surface": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#434655",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed-variant": "#005137",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-primary": "#b4c5ff",
+            "on-error": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "tertiary-container": "#007d57",
+            "outline-variant": "#c3c6d7",
+            "on-secondary": "#ffffff",
+            "primary": "#004ac6",
+            "tertiary-fixed-dim": "#68dba9",
+            "tertiary": "#006243",
+            "outline": "#737686",
+            "on-surface": "#0b1c30"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "2rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "code-inline": ["JetBrains Mono"],
+            "tech-badge": ["JetBrains Mono"],
+            "headline-xl": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          fontSize: {
+            "code-inline": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "tech-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f8f9ff;
+        color: #0b1c30;
+      }
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+  </style>
+<meta content="web_dashboard" name="shell-type"/>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-full">
+<!-- Backdrop Mobile -->
+<div class="fixed inset-0 bg-slate-950/60 z-40 hidden md:hidden transition-opacity" id="mobileBackdrop" onclick="toggleSidebar()"></div>
+<!-- SIDEBAR LATERAL (Slate-900 Arquitetural) -->
+<aside class="fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 text-slate-200 flex flex-col justify-between -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out border-r border-slate-800 shadow-xl md:shadow-none" id="sidebar">
+<div>
+<!-- Logo & Badge EDU -->
+<div class="h-16 flex items-center justify-between px-space-md border-b border-slate-800 bg-slate-950/40">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold shadow-md shadow-primary-container/20">
+<span class="material-symbols-outlined text-lg leading-none">precision_manufacturing</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-base text-white tracking-tight">Skill<span class="text-surface-tint">Track</span></span>
+<span class="px-1.5 py-0.5 font-tech-badge text-[10px] uppercase bg-primary-container/20 text-surface-tint rounded border border-primary-container/30">Edu</span>
+</div>
+<p class="font-tech-badge text-[10px] text-slate-400 tracking-wider uppercase leading-none mt-0.5">Plataforma do Estudante</p>
+</div>
+</div>
+<button aria-label="Fechar menu" class="md:hidden text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800" onclick="toggleSidebar()">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Links de Navegação Text-Only -->
+<div class="px-space-md pt-space-lg pb-space-xs">
+<span class="font-tech-badge text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Minha Trajetória</span>
+</div>
+<nav class="px-space-sm space-y-1" data-active-classes="bg-primary-container text-white font-medium shadow-md shadow-primary-container/20">
+<a aria-current="page" class="flex items-center justify-between px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-white font-medium shadow-md shadow-primary-container/20" data-path="meu-painel" href="#painel">
+<span>Meu Painel</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors font-label-md text-label-md" data-path="minhas-disciplinas-labs" href="#disciplinas">
+<span>Minhas Disciplinas &amp; Labs</span>
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">4 Ativas</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors font-label-md text-label-md" data-path="trilhas-hard-skills" href="#trilhas">
+<span>Trilhas de Hard Skills</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors font-label-md text-label-md" data-path="avaliacoes-praticas-feedback" href="#avaliacoes">
+<span>Avaliações Práticas &amp; Feedback</span>
+<span class="font-tech-badge text-[10px] px-1.5 py-0.5 rounded bg-primary-container/30 text-surface-tint font-bold">Novo</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors font-label-md text-label-md" data-path="meu-portfolio-tecnico" href="#portfolio">
+<span>Meu Portfólio Técnico</span>
+</a>
+<div class="px-space-md pt-space-lg pb-space-xs">
+<span class="font-tech-badge text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Preferências</span>
+</div>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors font-label-md text-label-md" data-path="configuracoes" href="#configuracoes">
+<span>Configurações</span>
+</a>
+</nav>
+</div>
+<!-- Status de Bancada / Laboratório Ativo -->
+<div class="p-space-md border-t border-slate-800 bg-slate-950/30">
+<div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-space-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-tech-badge text-[10px] text-slate-400 uppercase">Bancada / Telemetria</span>
+<span class="inline-flex items-center gap-1 font-tech-badge text-[10px] text-tertiary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span> Conectada
+          </span>
+</div>
+<div class="font-label-md text-slate-200 flex items-center justify-between text-xs">
+<span>Bancada FANUC CNC #03</span>
+<span class="font-tech-badge text-slate-400 text-[10px]">LAB-ENG-02</span>
+</div>
+<div class="w-full bg-slate-900 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 78%"></div>
+</div>
+<div class="flex justify-between font-tech-badge text-[10px] text-slate-400 leading-none">
+<span>Ciclo de Usinagem</span>
+<span>78%</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- HEADER FIXO (Topo) -->
+<header class="fixed top-0 right-0 left-0 md:left-72 z-30 bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-container h-16 shadow-xs flex items-center px-4 sm:px-space-md lg:px-space-lg transition-all">
+<div class="flex items-center justify-between w-full gap-space-md">
+<!-- Busca e Menu Mobile -->
+<div class="flex items-center gap-space-sm flex-1 max-w-xl">
+<button aria-label="Abrir navegação" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-surface-container-high transition-colors" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="w-full pl-9 pr-space-md py-1.5 bg-surface-container-low hover:bg-surface-container focus:bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline rounded-lg border border-transparent focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all" placeholder="Buscar competências, linguagens CNC, aulas e relatórios de lab..." type="text"/>
+</div>
+</div>
+<!-- Contexto do Estudante e Ações -->
+<div class="flex items-center gap-space-md shrink-0">
+<!-- Notificações -->
+<button aria-label="Ver notificações acadêmicas" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+</button>
+<div class="h-6 w-px bg-surface-container hidden sm:block"></div>
+<!-- Card do Aluno Logado -->
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-container to-surface-tint text-on-primary font-tech-badge text-xs flex items-center justify-center font-bold shadow-sm shadow-primary-container/30">
+              MC
+            </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-tertiary-fixed rounded-full ring-2 ring-surface-container-lowest" title="Status: Conectado"></span>
+</div>
+<div class="hidden sm:flex flex-col text-left">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Matheus Castilho</span>
+<span class="font-tech-badge text-[10px] text-on-secondary-container bg-surface-container px-1 py-0.2 rounded leading-none">#40921</span>
+</div>
+<span class="font-body-sm text-[11px] text-secondary leading-tight mt-0.5">Eng. Mecatrônica &amp; Manufatura</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- CONTEÚDO PRINCIPAL (Main com pt-16 e pl-72 correspondentes) -->
+<main class="pt-16 md:pl-72 min-h-screen transition-all">
+<div class="p-4 sm:p-space-md lg:p-space-lg max-w-7xl mx-auto space-y-space-lg">
+<div class="flex flex-col w-full space-y-space-lg">
+<!-- BANNER SUPERIOR DE TELEMETRIA E HARDWARE -->
+<div class="relative overflow-hidden rounded-xl bg-slate-900 text-slate-100 shadow-md p-space-md sm:p-space-lg">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-slate-800 text-tertiary-fixed flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-2xl animate-pulse">sensors</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-tech-badge text-tech-badge uppercase px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary-fixed font-semibold tracking-wider">Bancada Ativa</span>
+<span class="font-tech-badge text-tech-badge text-slate-400">FANUC CNC Lab 3 • Posto #04</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span class="font-tech-badge text-tech-badge text-slate-300">Conectada até 18:00</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-white">Ambiente de Usinagem &amp; Telemetria em Tempo Real</p>
+<p class="font-body-sm text-body-sm text-slate-400">Ciclo de fuso a 3.450 RPM | Tolerância nominal de ±0.005mm sob monitoramento de carga constante.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<a class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-label-md text-label-md transition-colors shadow-xs" href="#terminal">
+<span class="material-symbols-outlined text-base">terminal</span>
+<span>Logs de Máquina</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary-container text-white hover:bg-surface-tint font-label-md text-label-md transition-colors shadow-sm shadow-primary-container/30" href="#solicitar-calibracao">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>Ajustar Setup</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CABEÇALHO DO PAINEL DO ALUNO -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-xs">
+<div class="space-y-1.5 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-tech-badge text-tech-badge uppercase text-primary font-semibold tracking-wider">Matrícula #40921 • 6º Semestre</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-medium">Turma Integral A</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-background tracking-tight">Meu Progresso Técnico</h1>
+<p class="font-body-md text-body-md text-secondary">
+        Acompanhamento em tempo real de proficiência em bancada, laboratórios industriais e projetos homologados pelo corpo docente.
+      </p>
+</div>
+<!-- BOTÕES DE AÇÃO RÁPIDA -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors shadow-xs">
+<span class="material-symbols-outlined text-lg text-secondary">file_download</span>
+<span>Exportar Passaporte (PDF)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container hover:bg-surface-tint text-on-primary font-label-lg text-label-lg transition-all shadow-sm shadow-primary-container/25 hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+<span>Submeter Código / Relatório</span>
+</button>
+</div>
+</div>
+<!-- GRID DE 4 KPIS TÉCNICOS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Índice de Proficiência</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">92%</span>
+<span class="font-tech-badge text-tech-badge font-semibold text-tertiary flex items-center">
+<span class="material-symbols-outlined text-sm leading-none">arrow_upward</span> +4% mês
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Classificação: <strong class="text-on-surface font-medium">A+ / Avançado</strong> com Distinção.</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Horas Práticas em Lab</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">timelapse</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">148h</span>
+<span class="font-code-inline text-code-inline text-secondary">/ 160h meta</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">92.5% da carga horária semestral concluída.</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 92.5%"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Hard Skills Homologadas</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">military_tech</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">14</span>
+<span class="font-code-inline text-code-inline text-secondary">/ 16 Matriz</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">2 competências sob validação de bancada.</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 87.5%"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Avaliações Práticas</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">18</span>
+<span class="font-tech-badge text-tech-badge text-tertiary font-semibold">Média: 9.6 / 10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">100% de presença e zero acidentes técnicos.</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 96%"></div>
+</div>
+</div>
+</div>
+<!-- LAYOUT PRINCIPAL EM 2 COLUNAS (3/4 E 1/4) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- COLUNA PRINCIPAL ESQUERDA (8 colunas) -->
+<div class="lg:col-span-8 space-y-space-lg">
+<!-- SEÇÃO 3: MATRIZ DE HARD SKILLS & DOMÍNIO TÉCNICO -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-xs space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Matriz de Hard Skills &amp; Proficiência</h2>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-surface-container text-on-secondary-container">Auditoria Semestral</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Comparativo entre requisito do mercado industrial (baseline 75%) e seu domínio comprovado.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span> Seu Domínio
+            </span>
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary">
+<span class="w-2.5 h-2.5 rounded-sm bg-surface-container-high"></span> Meta Mercado
+            </span>
+</div>
+</div>
+<!-- LISTA DE COMPETÊNCIAS TÉCNICAS -->
+<div class="space-y-4">
+<!-- Skill 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">precision_manufacturing</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Usinagem CNC • G-Code &amp; Parametrização</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-medium">Nível 4 (Mestre)</span>
+</div>
+<span class="font-code-inline text-code-inline font-bold text-primary">95% Domínio</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary-container rounded-full" style="width: 95%"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-slate-900 z-10" style="left: 75%" title="Meta Mercado (75%)"></div>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Setup de ferramentas e zeramento de peça em fresadora 3 eixos</span>
+<span>Requisito Indústria: 75% • Superado em +20%</span>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">memory</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Lógica FANUC 0i-MF &amp; Controladores PLC</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-medium">Nível 4 (Avançado)</span>
+</div>
+<span class="font-code-inline text-code-inline font-bold text-primary">92% Domínio</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary-container rounded-full" style="width: 92%"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-slate-900 z-10" style="left: 75%"></div>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Depuração de alarmes de máquina e automação de rotinas de apalpador</span>
+<span>Requisito Indústria: 75% • Superado em +17%</span>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">code</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Sistemas Web &amp; APIs (React, Express &amp; Node)</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-medium">Nível 3 (Avançado)</span>
+</div>
+<span class="font-code-inline text-code-inline font-bold text-primary">88% Domínio</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary-container rounded-full" style="width: 88%"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-slate-900 z-10" style="left: 70%"></div>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Construção de dashboards de telemetria industrial em tempo real</span>
+<span>Requisito Indústria: 70% • Superado em +18%</span>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">database</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">PostgreSQL &amp; Ingestão de Séries Temporais</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-medium">Nível 3 (Interm. Superior)</span>
+</div>
+<span class="font-code-inline text-code-inline font-bold text-primary">84% Domínio</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary-container rounded-full" style="width: 84%"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-slate-900 z-10" style="left: 70%"></div>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Modelagem relacional e queries analíticas para logs de vibração e RPM</span>
+<span>Requisito Indústria: 70% • Superado em +14%</span>
+</div>
+</div>
+<!-- Skill 5 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">hub</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Estatística Industrial &amp; IoT (MQTT / OPC-UA)</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-medium">Nível 2 (Intermediário)</span>
+</div>
+<span class="font-code-inline text-code-inline font-bold text-primary">79% Domínio</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary-container rounded-full" style="width: 79%"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-slate-900 z-10" style="left: 80%"></div>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Aquisição de dados de sensores analógicos e gateways edge</span>
+<span>Requisito Indústria: 80% • Em convergência (-1%)</span>
+</div>
+</div>
+<!-- Skill 6 -->
+<div class="p-space-md rounded-lg bg-tertiary-container/10 hover:bg-tertiary-container/15 transition-colors space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-lg">shield</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Segurança Operacional NR-12 &amp; Bloqueio (LOTO)</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Certificado Homologado</span>
+</div>
+<span class="font-code-inline text-code-inline font-bold text-tertiary">98% Domínio</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-tertiary rounded-full" style="width: 98%"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-slate-900 z-10" style="left: 85%"></div>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-tertiary">
+<span>Procedimento de segurança para chave geral, intertravamentos óticos e E-Stop</span>
+<span>Requisito Mandatório Atendido (Validade: 2026)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SEÇÃO 4: MINHAS DISCIPLINAS E PRÁTICAS ATIVAS -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Disciplinas &amp; Práticas de Laboratório</h2>
+<p class="font-body-sm text-body-sm text-secondary">Acompanhamento contínuo dos 3 laboratórios ativos neste ciclo acadêmico.</p>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#todas-disciplinas">
+<span>Ver grade integral</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card Disciplina 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">MAN-204</span>
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold">Em Aula</span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface leading-tight">Manufatura Avançada</h3>
+<p class="font-body-sm text-xs text-secondary">Prof. Silva • Lab 3 (Mecânica de Precisão)</p>
+</div>
+<div class="space-y-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+<span>Hoje, 14:00 • Eixo Bimanual</span>
+</div>
+<div class="font-tech-badge text-[10px] text-secondary">
+                Bancada alocada: Posto 04
+              </div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-md text-xs text-secondary">
+<span>Progresso Prático</span>
+<span class="font-bold text-on-surface">91%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+</div>
+<!-- Card Disciplina 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">TADS-102</span>
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-bold">Sprint 4</span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface leading-tight">Sistemas Web &amp; APIs</h3>
+<p class="font-body-sm text-xs text-secondary">Profª. Helena • Hub TI Lab 1</p>
+</div>
+<div class="space-y-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-primary">assignment_turned_in</span>
+<span>Sexta-feira • REST Telemetria</span>
+</div>
+<div class="font-tech-badge text-[10px] text-secondary">
+                Repositório: Commit sincronizado
+              </div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-md text-xs text-secondary">
+<span>Progresso Prático</span>
+<span class="font-bold text-on-surface">85%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Card Disciplina 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">AUT-301</span>
+<span class="font-tech-badge text-[10px] px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold">Prática Pendente</span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface leading-tight">Controle &amp; Métricas Industriais</h3>
+<p class="font-body-sm text-xs text-secondary">Prof. Carlos • Lab 5 (Automação)</p>
+</div>
+<div class="space-y-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-primary">science</span>
+<span>Terça-feira • Prova Bancada PLC</span>
+</div>
+<div class="font-tech-badge text-[10px] text-secondary">
+                Status: Revisão de filtros necessária
+              </div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-md text-xs text-secondary">
+<span>Progresso Prático</span>
+<span class="font-bold text-on-surface">78%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SEÇÃO 5: FEEDBACKS RECENTES DOS PROFESSORES -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-xs space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Feedbacks Recentes &amp; Validações em Bancada</h2>
+<p class="font-body-sm text-body-sm text-secondary">Relatórios individuais assinados pelos orientadores após inspeção de bancada.</p>
+</div>
+<span class="font-tech-badge text-tech-badge text-secondary">Última atualização: Hoje, 10:45</span>
+</div>
+<div class="space-y-3">
+<!-- Feedback Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center font-tech-badge text-xs">
+                  PS
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Prof. Silva</span>
+<span class="font-tech-badge text-[10px] text-secondary">• Manufatura Avançada</span>
+</div>
+<span class="font-body-sm text-[11px] text-secondary">Inspeção no Paquímetro &amp; Rugosímetro Mitutoyo</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">98/100</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase tracking-wider">Homologada</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              “Excelente precisão na tolerância dimensional micrométrica na usinagem CNC e parametrização correta dos ciclos FANUC. Código homologado na máquina sem colisões e tempos de corte otimizados.”
+            </p>
+<div class="flex flex-wrap items-center gap-2 font-tech-badge text-[11px]">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">G-Code G71/G70</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">Ra 0.8μm</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">CNC FANUC 0i</span>
+</div>
+</div>
+<!-- Feedback Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary-container text-white font-bold flex items-center justify-center font-tech-badge text-xs">
+                  PH
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Profª. Helena</span>
+<span class="font-tech-badge text-[10px] text-secondary">• Sistemas Web &amp; APIs</span>
+</div>
+<span class="font-body-sm text-[11px] text-secondary">Code Review no Repositório de Telemetria</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">95/100</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-bold uppercase tracking-wider">Com Louvor</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              “Integração segura do JWT e schemas PostgreSQL bem normalizados para leitura dos sensores de bancada. Excelente estrutura de endpoints documentada via OpenAPI.”
+            </p>
+<div class="flex flex-wrap items-center gap-2 font-tech-badge text-[11px]">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">JWT Auth</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">PostgreSQL 16</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">Docker Compose</span>
+</div>
+</div>
+<!-- Feedback Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary text-white font-bold flex items-center justify-center font-tech-badge text-xs">
+                  PC
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Prof. Carlos</span>
+<span class="font-tech-badge text-[10px] text-secondary">• Controle &amp; Métricas</span>
+</div>
+<span class="font-body-sm text-[11px] text-secondary">Teste no Osciloscópio Rigol #02</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">82/100</span>
+<span class="font-tech-badge text-tech-badge px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold uppercase tracking-wider">Em Revisão</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              “Ajustar parâmetros de filtragem de ruído no sinal do transdutor analógico antes da bancada final. Sinal está com harmônicos espúrios sob acionamento do inversor de frequência.”
+            </p>
+<div class="flex flex-wrap items-center gap-2 font-tech-badge text-[11px]">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">Filtro Passa-Baixas</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">PLC Siemens S7</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium">4-20mA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUNA LATERAL DIREITA: WIDGETS TÉCNICOS & AGENDAMENTOS (4 colunas) -->
+<div class="lg:col-span-4 space-y-space-lg">
+<!-- WIDGET 1: CHECKLIST DE BANCADA PRÉ-AULA -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">checklist</span>
+<h3 class="font-headline-sm text-base text-on-surface">Checklist de Bancada</h3>
+</div>
+<span class="font-tech-badge text-tech-badge px-1.5 py-0.5 rounded bg-surface-container text-secondary font-semibold">Hoje: 14:00</span>
+</div>
+<p class="font-body-sm text-xs text-secondary">
+          Etapas obrigatórias antes do acionamento sob carga no Torno/Fresa CNC #03.
+        </p>
+<div class="space-y-2.5">
+<label class="flex items-start gap-3 p-2 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container" type="checkbox"/>
+<div class="space-y-0.5 text-xs">
+<span class="font-label-md text-on-surface font-medium block">Verificação de EPIs &amp; Trava NR-12</span>
+<span class="font-body-sm text-[11px] text-secondary">Óculos com proteção lateral e botas de biqueira.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container" type="checkbox"/>
+<div class="space-y-0.5 text-xs">
+<span class="font-label-md text-on-surface font-medium block">Nível de Óleo Solúvel Refrigerante</span>
+<span class="font-body-sm text-[11px] text-secondary">Tanque em 85% • Refração calibrada.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container" type="checkbox"/>
+<div class="space-y-0.5 text-xs">
+<span class="font-label-md text-on-surface font-medium block">Simulação de Gráfico Seco (Dry Run)</span>
+<span class="font-body-sm text-[11px] text-secondary">Sem colisão verificada no software CAM.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container" type="checkbox"/>
+<div class="space-y-0.5 text-xs">
+<span class="font-label-md text-on-surface font-medium block">Zeramento de Eixo Z com Apalpador</span>
+<span class="font-body-sm text-[11px] text-secondary">Pendente validação do monitor de laboratório.</span>
+</div>
+</label>
+</div>
+<button class="w-full py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base">check</span>
+<span>Validar Checklist com Monitor</span>
+</button>
+</div>
+<!-- WIDGET 2: AGENDAMENTO DE EQUIPAMENTOS ESPECIAIS -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<h3 class="font-headline-sm text-base text-on-surface">Reserva de Equipamentos</h3>
+</div>
+<span class="font-tech-badge text-tech-badge text-tertiary font-bold">Disponível</span>
+</div>
+<p class="font-body-sm text-xs text-secondary">
+          Solicitação de tempo de uso autônomo para TCC e projetos de extensão homologados.
+        </p>
+<div class="space-y-3">
+<!-- Equipamento 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Usinagem 5 Eixos DMG Mori</span>
+<span class="font-tech-badge text-[10px] px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Livre Amanhã</span>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Lab Metalurgia • Posição A1</span>
+<span>10:00 - 12:00</span>
+</div>
+<button class="w-full py-1.5 bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-xs rounded transition-colors text-center font-medium">
+              Reservar Janela de 2h
+            </button>
+</div>
+<!-- Equipamento 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Osciloscópio Rigol 4CH 200MHz</span>
+<span class="font-tech-badge text-[10px] px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-semibold">Em Uso (Até 16h)</span>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>Bancada Eletrônica #02</span>
+<span>16:30 Disponível</span>
+</div>
+<button class="w-full py-1.5 bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-xs rounded transition-colors text-center font-medium">
+              Entrar na Fila
+            </button>
+</div>
+<!-- Equipamento 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Impressora 3D Industrial SLA</span>
+<span class="font-tech-badge text-[10px] px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Livre Agora</span>
+</div>
+<div class="flex items-center justify-between font-tech-badge text-[10px] text-secondary">
+<span>FabLab Prototipagem</span>
+<span>Resina Tough 2000</span>
+</div>
+<button class="w-full py-1.5 bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-xs rounded transition-colors text-center font-medium">
+              Enviar Arquivo .STL
+            </button>
+</div>
+</div>
+</div>
+<!-- WIDGET 3: STATUS DO REPOSITÓRIO E TELEMETRIA DE HARDWARE -->
+<div class="p-space-md rounded-xl bg-slate-900 text-slate-200 shadow-sm space-y-3">
+<div class="flex items-center justify-between border-b border-slate-800 pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed">terminal</span>
+<span class="font-tech-badge text-tech-badge text-slate-300 font-semibold uppercase">Telemetria Local (Edge)</span>
+</div>
+<span class="font-tech-badge text-[10px] text-slate-400">14:02:18 UTC</span>
+</div>
+<div class="font-code-inline text-[11px] space-y-1 text-slate-300">
+<p class="text-tertiary-fixed">[OK] Conexao MQTT broker: porta 1883 ativa</p>
+<p>[SYS] Eixo X: 142.040 | Eixo Y: -84.210</p>
+<p>[SYS] Eixo Z: -12.450 | Corrente: 4.8A</p>
+<p class="text-primary-fixed-dim">[LOG] 14:01 G01 X50 Y20 F250 homologado</p>
+<p class="text-slate-400">&gt; Sensor vibração FFT dentro do limite (0.42mm/s)</p>
+</div>
+<div class="pt-1">
+<a class="font-label-md text-xs text-primary-fixed-dim hover:text-white flex items-center justify-end gap-1" href="#console-completa">
+<span>Abrir console avançada</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SCRIPT DE MICRO-INTERAÇÃO CLIENT-SIDE -->
+<script>
+  (function initDashboardInteractions() {
+    // Permite interatividade imediata no checklist sem recarregar a tela
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(chk => {
+      chk.addEventListener('change', (e) => {
+        const parent = e.target.closest('label');
+        if (e.target.checked) {
+          parent.classList.add('opacity-80');
+        } else {
+          parent.classList.remove('opacity-80');
+        }
+      });
+    });
+  })();
+</script>
+</div>
+</main>
+<script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const backdrop = document.getElementById('mobileBackdrop');
+      const isClosed = sidebar.classList.contains('-translate-x-full');
+      if (isClosed) {
+        sidebar.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+  </script>
+</body></html>
