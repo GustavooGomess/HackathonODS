@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Navigate, NavLink, Route, Routes, useParams } from 'react-router-dom';
 
 const Screen1 = lazy(() => import('../telas/tela1/Screen1.jsx'));
@@ -29,6 +29,10 @@ function ScreenPage() {
   const { screenId } = useParams();
   const screen = screens.find(({ id }) => id === Number(screenId));
 
+  useEffect(() => {
+    document.title = screen ? `${screen.label} | SkillTrack` : 'SkillTrack';
+  }, [screen]);
+
   if (!screen) {
     return <Navigate to="/tela/1" replace />;
   }
@@ -45,6 +49,7 @@ function ScreenPage() {
 export default function App() {
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main-content">Pular para o conteúdo</a>
       <header className="app-header">
         <div className="brand">
           <span className="brand-mark" aria-hidden="true">S</span>
@@ -65,7 +70,7 @@ export default function App() {
           ))}
         </nav>
       </header>
-      <main className="screen-container">
+      <main className="screen-container" id="main-content">
         <Routes>
           <Route path="/" element={<Navigate to="/tela/1" replace />} />
           <Route path="/tela/:screenId" element={<ScreenPage />} />
