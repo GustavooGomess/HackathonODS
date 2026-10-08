@@ -16,6 +16,8 @@ npm run dev
 Abra o endereço local informado pelo Vite. Para gerar e testar a versão de
 produção, use `npm run build` e `npm run preview`.
 
+As telas também podem ser acessadas diretamente em `/tela/1` até `/tela/10`.
+
 ## Estrutura
 
 ```text
