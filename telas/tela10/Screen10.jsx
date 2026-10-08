@@ -73,7 +73,7 @@ export default function Screen10() {
                           </div>
                         </div>
                         <div className="flex items-center gap-space-sm self-start md:self-auto">
-                          <button className="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md shadow-sm group" id="mark-all-read-btn" onClick={markAllRead} type="button">
+                          <button className="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md shadow-sm group disabled:cursor-not-allowed disabled:opacity-50" disabled={unreadCount === 0} id="mark-all-read-btn" onClick={markAllRead} type="button">
                             <span className="material-symbols-outlined text-sm text-secondary group-hover:scale-110 transition-transform">done_all</span>
                             <span>Marcar todas como lidas</span>
                           </button>
