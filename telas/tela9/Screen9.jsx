@@ -230,7 +230,7 @@ export default function Screen9() {
                           <div className="bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-col gap-space-sm" id="checklist-container">
                             {/* Item 1: Concluído */}
                             <div className="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container transition-all">
-                              <button className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[0] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(0)} type="button">
+                              <button aria-label="Implementar Custom Hooks de Paginação" aria-pressed={completedTasks[0]} className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[0] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(0)} type="button">
                                 <span className="material-symbols-outlined text-sm font-bold">check</span>
                               </button>
                               <div className="flex-1 min-w-0">
@@ -246,7 +246,7 @@ export default function Screen9() {
                             </div>
                             {/* Item 2: Concluído */}
                             <div className="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container transition-all">
-                              <button className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[1] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(1)} type="button">
+                              <button aria-label="Audit de Acessibilidade com Axe Core" aria-pressed={completedTasks[1]} className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[1] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(1)} type="button">
                                 <span className="material-symbols-outlined text-sm font-bold">check</span>
                               </button>
                               <div className="flex-1 min-w-0">
@@ -262,7 +262,7 @@ export default function Screen9() {
                             </div>
                             {/* Item 3: Pendente Urgente */}
                             <div className="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-high transition-all">
-                              <button className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[2] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(2)} type="button">
+                              <button aria-label="Submeter Projeto: Dashboard ODS 4 Interativo" aria-pressed={completedTasks[2]} className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[2] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(2)} type="button">
                                 <span className="material-symbols-outlined text-sm">check</span>
                               </button>
                               <div className="flex-1 min-w-0">
@@ -280,7 +280,7 @@ export default function Screen9() {
                             </div>
                             {/* Item 4: Pendente Normal */}
                             <div className="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container transition-all">
-                              <button className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[3] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(3)} type="button">
+                              <button aria-label="Objetivo semanal 4" aria-pressed={completedTasks[3]} className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center cursor-pointer shadow-sm ${completedTasks[3] ? 'bg-secondary text-surface-container-lowest' : 'bg-surface-container-lowest text-transparent hover:text-on-surface-variant'}`} onClick={() => toggleTask(3)} type="button">
                                 <span className="material-symbols-outlined text-sm">check</span>
                               </button>
                               <div className="flex-1 min-w-0">
