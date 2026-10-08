@@ -1,9 +1,8 @@
 # HackathonODS
 
 Aplicação React que reúne as dez telas SkillTrack em uma experiência navegável.
-Cada tela continua em seu HTML original e é exibida pela aplicação; a barra
-superior permite alternar entre elas sem remover os estilos ou interações
-existentes.
+Cada tela é um componente JSX na pasta correspondente, e a barra superior
+permite alternar entre elas.
 
 ## Executar localmente
 
@@ -27,18 +26,19 @@ HackathonODS/
 ├── src/
 │   ├── App.jsx
 │   ├── main.jsx
+│   ├── screen-theme.css
 │   └── styles.css
 ├── telas/
-│   ├── tela1/tela1.html
-│   ├── tela2/tela2.html
-│   ├── tela3/tela3.html
-│   ├── tela4/tela4.html
-│   ├── tela5/tela5.html
-│   ├── tela6/tela6.html
-│   ├── tela7/tela7.html
-│   ├── tela8/tela8.html
-│   ├── tela9/tela9.html
-│   └── tela10/tela10.html
+│   ├── tela1/Screen1.jsx
+│   ├── tela2/Screen2.jsx
+│   ├── tela3/Screen3.jsx
+│   ├── tela4/Screen4.jsx
+│   ├── tela5/Screen5.jsx
+│   ├── tela6/Screen6.jsx
+│   ├── tela7/Screen7.jsx
+│   ├── tela8/Screen8.jsx
+│   ├── tela9/Screen9.jsx
+│   └── tela10/Screen10.jsx
 ├── index.html
 └── package.json
 ```
