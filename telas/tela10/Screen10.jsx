@@ -85,7 +85,7 @@ export default function Screen10() {
                       {/* Filter & Search Toolbar */}
                       <div className="p-space-sm rounded-xl bg-surface-container-low flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm shadow-md">
                         {/* Category Tabs */}
-                        <div className="flex items-center gap-1 overflow-x-auto pb-1 lg:pb-0" id="filter-tabs">
+                        <div aria-label="Filtrar notificações" className="flex items-center gap-1 overflow-x-auto pb-1 lg:pb-0" id="filter-tabs" role="group">
                           <button className={`filter-tab px-space-md py-2 rounded-lg font-label-md text-label-md transition-all flex items-center gap-space-xs shrink-0 ${activeCategory === 'all' ? 'bg-primary-container text-on-primary-container shadow-[0_0_14px_rgba(37,99,235,0.3)]' : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container'}`} data-category="all" onClick={() => setActiveCategory('all')} type="button">
                             <span>Todas</span>
                             <span className="px-1.5 py-0.2 rounded-full bg-background/40 text-[10px] font-bold">4</span>
@@ -115,7 +115,7 @@ export default function Screen10() {
                         {/* Quick Search Bar */}
                         <div className="relative w-full lg:w-80 shrink-0">
                           <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span>
-                          <input className="w-full h-9 pl-9 pr-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all" id="notification-search" onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar avisos, módulos, docentes..." type="search" value={searchTerm} />
+                          <input aria-label="Buscar notificações" className="w-full h-9 pl-9 pr-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all" id="notification-search" onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar avisos, módulos, docentes..." type="search" value={searchTerm} />
                         </div>
                       </div>
                       {/* Notifications Layout: Main Feed & Context Metrics */}
