@@ -33,6 +33,32 @@ body {
   background: #0b1220;
 }
 
+.skip-link {
+  position: absolute;
+  z-index: 1100;
+  top: 8px;
+  left: 8px;
+  padding: 10px 14px;
+  transform: translateY(-150%);
+  border-radius: 8px;
+  background: #fff;
+  color: #0b1220;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
 .app-header {
   z-index: 1000;
   display: flex;
@@ -124,6 +150,17 @@ body {
   flex: 1;
   overflow-y: auto;
   background: #f8f9ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .legacy-screen {
