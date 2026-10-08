@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 export default function Screen9() {
   const [completedTasks, setCompletedTasks] = useState([true, true, false, false]);
+  const completedTaskCount = completedTasks.filter(Boolean).length;
+  const completionPercent = Math.round((completedTaskCount / completedTasks.length) * 100);
   const toggleTask = (index) => {
     setCompletedTasks((tasks) => tasks.map((completed, taskIndex) => (
       taskIndex === index ? !completed : completed
@@ -213,7 +215,17 @@ export default function Screen9() {
                               <span className="material-symbols-outlined text-secondary">checklist</span>
                               <h2 className="font-title-md text-title-md text-on-surface">Próximos Objetivos da Semana</h2>
                             </div>
-                            <span className="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">3 de 5 concluídos</span>
+                            <span className="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">{completedTaskCount} de {completedTasks.length} concluídos</span>
+                          </div>
+                          <div
+                            aria-label="Progresso dos objetivos da semana"
+                            aria-valuemax={completedTasks.length}
+                            aria-valuemin={0}
+                            aria-valuenow={completedTaskCount}
+                            className="h-2 overflow-hidden rounded-full bg-surface-container-highest"
+                            role="progressbar"
+                          >
+                            <div className="h-full rounded-full bg-secondary transition-all" style={{ width: `${completionPercent}%` }} />
                           </div>
                           <div className="bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-col gap-space-sm" id="checklist-container">
                             {/* Item 1: Concluído */}
