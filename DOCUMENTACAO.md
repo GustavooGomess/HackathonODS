@@ -71,4 +71,7 @@ A aplicação é um projeto web robusto baseada em React que encapsula o projeto
 A abordagem focou primeiro em criar um guia de estilo estrito (Technical Precision). A interface foi construída em arquivos HTML e integradas ao final em uma estrutura unificada React + Vite.
 
 ## Integrantes
-* Ahslam Mendes (Adicione os demais membros aqui)
+* Ahslam Mendes
+* Fabio Bitencourt Ribeiro
+* Gustavo Henrique Gouveia Gomes
+* Ronaldo Francisco do Amaral Soares
