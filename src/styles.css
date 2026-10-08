@@ -1,0 +1,157 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f8fafc;
+  background: #0b1220;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.app-shell {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background: #0b1220;
+}
+
+.app-header {
+  z-index: 1;
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  gap: 28px;
+  padding: 10px 22px;
+  border-bottom: 1px solid #253148;
+  background: #111a2b;
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand-name {
+  color: #f8fafc;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.screen-nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
+}
+
+.screen-link {
+  display: inline-flex;
+  min-height: 40px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: #bdc8da;
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+.screen-link:hover {
+  border-color: #34435c;
+  background: #1b2940;
+  color: #fff;
+}
+
+.screen-link.active {
+  border-color: #315fc7;
+  background: #1e3a70;
+  color: #fff;
+}
+
+.screen-number {
+  color: #8da4c5;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+}
+
+.screen-link.active .screen-number {
+  color: #a9c4ff;
+}
+
+.screen-container {
+  min-height: 0;
+  flex: 1;
+  background: #f8f9ff;
+}
+
+.screen-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #f8f9ff;
+}
+
+@media (max-width: 700px) {
+  .app-header {
+    min-height: 62px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 8px 12px 10px;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .screen-nav {
+    width: 100%;
+  }
+
+  .screen-link {
+    min-height: 36px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+}
